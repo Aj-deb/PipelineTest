@@ -15,7 +15,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
-        - uses: actions/setup=python@v6
+        - uses: actions/setup-python@v6
         - name: run the fastapi uvicorn
           run: uvicorn .:app --reload
 
