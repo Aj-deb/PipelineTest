@@ -16,7 +16,12 @@ jobs:
       steps:
         - uses: actions/checkout@v6
         - uses: actions/setup-python@v6
+        
+        - name: run the dependencies
+          run: |
+            python -m pip install -r requirements.txt
+          
         - name: run the fastapi uvicorn
-          run: uvicorn .:app --reload
+          run: uvicorn app:app 
 
     
