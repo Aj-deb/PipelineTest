@@ -9,11 +9,10 @@ name : "python_app"
 on:
   push:
     branches:
-      -main
+      - main
 jobs:
     fastapi:
       runs-on: ubuntu-latest
-      
       steps:
         - uses: actions/checkout@v4
         - uses: actions/setup=python@v6
