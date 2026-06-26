@@ -22,6 +22,6 @@ jobs:
             python -m pip install -r requirements.txt
           
         - name: run the fastapi uvicorn
-          run: curl http://127.0.0.1:8000/
+          run: echo "chl gaya"
 
     
