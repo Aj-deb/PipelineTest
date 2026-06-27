@@ -16,12 +16,25 @@ jobs:
       steps:
         - uses: actions/checkout@v6
         - uses: actions/setup-python@v6
-        
+          with:
+            python-version: "3.13"
         - name: run the dependencies
           run: |
-            python -m pip install -r requirements.txt
+            python -m pip --upgrade pip
+            pip install -r requirements.txt
           
         - name: run the fastapi uvicorn
-          run: echo "chl gaya"
+          run: | 
+           uvicorn app:app &
+           sleep 10
+
+        - name: Setting up testing server
+          run: |
+            echo "Starting the uvicron server"
+            curl http://127.0.0.1:8000
+            echo "the testing has been completed"
+          
+
+          
 
     
